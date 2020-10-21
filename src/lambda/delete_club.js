@@ -3,12 +3,12 @@ exports.handler = function (event, context, callback) {
   if (random !== 1) {
     callback(null, {
       statusCode: 400,
-      error: "Forced error"
+      error: "Forced error",
     });
   } else {
     callback(null, {
-    statusCode: 200,
-    body: true,
-  });
+      statusCode: 200,
+      body: JSON.stringify({ message: "Je club is geactiveerd" }),
+    });
   }
 };
