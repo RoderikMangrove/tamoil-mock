@@ -1,7 +1,7 @@
 exports.handler = function (event, context, callback) {
   const random = Math.floor(Math.random() * 5);
   console.log("random", random)
-  if (random !== 1) {
+  if (random === 1) {
     callback(null, {
       statusCode: 400,
       error: "Forced error",
@@ -9,7 +9,7 @@ exports.handler = function (event, context, callback) {
   } else {
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify({ message: "Je club is geactiveerd" }),
+      body: JSON.stringify({ message: "Je club is gedeactiveerd" }),
     });
   }
 };
